@@ -74,16 +74,11 @@ For significant updates or feature additions, consider opening an issue first to
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ## Contact
 
 If you have any questions, feedback, or need further assistance, please feel free to open an issue or reach out:
-	•	Maintainer: Chaitanya Maili
-	•	GitHub Issues: Use the issues section for any queries or discussions.
+ - Maintainer: Chaitanya Maili
+ - GitHub Issues: Use the issues section for any queries or discussions.
 
-⸻
-
-Happy studying and good luck on your journey to becoming a GCP Cloud Architect!
-
-You can customize any section or add more details as needed. This template should provide a clear and professional starting point for your repository.

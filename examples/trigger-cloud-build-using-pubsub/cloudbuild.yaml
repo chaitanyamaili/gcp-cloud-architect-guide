@@ -1,0 +1,35 @@
+substitutions:
+  _ENV: "dev"
+  _SERVICE_NAME: "default"
+
+steps:
+  # Step 1: Validate input parameters
+  - name: "gcr.io/cloud-builders/bash"
+    id: "validate-inputs"
+    entrypoint: "bash"
+    args:
+      - -c
+      - |
+        VALID_ENVS=("dev" "staging" "prod")
+        if [[ ! " ${VALID_ENVS[@]} " =~ " ${_ENV} " ]]; then
+          echo "❌ ERROR: Invalid _ENV value '${_ENV}'. Allowed: dev, staging, prod"
+          exit 1
+        fi
+
+        if [[ -z "${_SERVICE_NAME}" ]]; then
+          echo "❌ ERROR: _SERVICE_NAME cannot be empty"
+          exit 1
+        fi
+
+        echo "✅ Input validation passed"
+  # Step 2: Your actual build step
+  - name: "gcr.io/cloud-builders/gcloud"
+    id: "run-build"
+    entrypoint: "bash"
+    args:
+      - -c
+      - |
+        echo "🚀 Starting build for service: ${_SERVICE_NAME} in environment: ${_ENV}"
+        # Simulate build process
+        sleep 5
+        echo "✅ Build completed successfully"
